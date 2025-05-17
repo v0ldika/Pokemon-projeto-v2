@@ -188,11 +188,6 @@ def create_images_csv(pokemon_csv_path, output_csv_path):
         pokemon_id = pokemon['id']
         image_url = generate_official_artwork_url(pokemon_id)
 
-        # Verificar se a imagem existe (opcional)
-        # time.sleep(0.1)  # Descomente se for verificar muitas imagens
-        # response = requests.head(image_url)
-        # if response.status_code != 200:
-        #     image_url = ""  # Ou None se a imagem não existir
 
         image_data.append({
             'id': pokemon_id,
@@ -214,9 +209,9 @@ def create_images_csv(pokemon_csv_path, output_csv_path):
     print(f"\n✅ Arquivo {output_csv_path} criado com {len(image_data)} Pokémon!")
 
 
-# Configurações
-POKEMON_CSV_PATH = 'pokeapi_pokemon.csv'  # Caminho do seu CSV original
-IMAGES_CSV_PATH = 'pokemon_images.csv'  # Novo arquivo a ser criado
+
+POKEMON_CSV_PATH = 'pokeapi_pokemon.csv' 
+IMAGES_CSV_PATH = 'pokemon_images.csv'  
 
 # Executar
 if __name__ == "__main__":
